@@ -142,14 +142,14 @@ export default {
 }
 
 .location-box .location {
-  color: rgb(0, 0, 0);
+  color: rgb(94, 94, 94);
   font-size: 32px;
   font-weight: bold;
   text-align: center;
 }
 
 .location-box .date {
-  color: rgb(0, 0, 0);
+  color: rgb(94, 94, 94);
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -163,7 +163,7 @@ export default {
 .weather-box .temp {
   display: inline-block;
   padding: 10px 25px;
-  color: rgb(0, 0, 0);
+  color: rgb(94, 94, 94);
   font-size: 95px;
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.2);
@@ -172,7 +172,7 @@ export default {
 }
 
 .weather-box .weather {
-  color: rgb(0, 0, 0);
+  color: rgb(94, 94, 94);
   font-size: 40px;
   font-weight: bold;
 }
