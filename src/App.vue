@@ -1,40 +1,40 @@
 <template>
-  <div>
-    <main>
-      <div class="search-box">
-        <input
-          type="text"
-          class="search-bar"
-          placeholder="Search some Place"
-          v-model="query"
-          @keypress="fetchWeather"
-        />
-      </div>
-      <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
+  <div class="search-style">
+    <div ><h1 class="search-text">Searc Some Place</h1></div><br>
+    <div class="search-box">
+      <input
+      type="text"
+      class="search-bar"
+      placeholder="Chiang mai?"
+      v-model="query"
+      @keypress="fetchWeather"
+      />
+    </div>
+    <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
           <div class="location">
             {{ weather.name }}, {{ weather.sys.country }}
           </div>
           <div class="date">{{ dateBuilder() }}</div>
         </div>
-
+        
         <div class="weather-box">
           <div class="temp">{{ Math.round(weather.main.temp) }}°C</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
-        </div>
+        </div> 
       </div>
-    </main>
+      
+      <div></div>
   </div>
 </template>
 
-<!-- SCRIPTS -->
 <script>
 export default {
   name: "App",
   data() {
-    //fetching API from openweathermap.org
+
     return {
-      api_key: "7f40938131da6e5fe5ebeaea4fe2d0da",
+      api_key: "f3563a1c254c38667eb5e4f6e1ae6f32",
       url_base: "https://api.openweathermap.org/data/2.5/",
       query: "",
       weather: {},
@@ -55,8 +55,6 @@ export default {
     setResults(results) {
       this.weather = results;
     },
-
-
     dateBuilder() {
       let d = new Date();
       let months = [
@@ -90,31 +88,24 @@ export default {
     },
   },
 };
+
+
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: linear-gradient(
-    to left,
-    rgba(94, 182, 255, 0.25),
-    rgb(50, 180, 255)
-  );
+.search-text{
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
 }
 
-main {
+.search-style {
   width: 100%;
   max-width: 600px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(219, 219, 219, 0.596);
   border-radius: 11px;
   padding: 25px;
   display: flex;
@@ -122,45 +113,47 @@ main {
   justify-content: center;
   align-items: center;
   margin-left: 350px;
+  box-shadow: 10px 10px 30px;
 }
 
 
 .search-box .search-bar {
   display: block;
-  width: 100%;
+  width: 550px;
   padding: 15px;
-
-  color: #000000;
+  color: #0000006e;
   font-size: 20px;
   appearance: none;
   border: none;
   outline: none;
   background: none;
-
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.377);
   border-radius: 0px 16px 0px 16px;
   transition: 0.4s;
+  font-family: cursive;
 }
 
 .search-box .search-bar:focus {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 16px 0px 16px 0px;
+  font-family: cursive;
 }
 
 .location-box .location {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 32px;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
 }
 
 .location-box .date {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
+  
 }
 
 .weather-box {
@@ -170,7 +163,7 @@ main {
 .weather-box .temp {
   display: inline-block;
   padding: 10px 25px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   font-size: 95px;
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.2);
@@ -179,7 +172,7 @@ main {
 }
 
 .weather-box .weather {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 40px;
   font-weight: bold;
 }
